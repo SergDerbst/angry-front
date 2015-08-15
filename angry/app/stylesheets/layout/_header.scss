@@ -1,0 +1,47 @@
+.gry-header {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: $header-height;
+  min-height: $header-height;
+  background-color: $background-color-dark;
+  color: $color-text-on-dark-background;
+  border-top: $header-border-height solid $background-color-darkest;
+  @include box-shadow(0 0 4px 0 #888);
+  @include keyframes('intro') {
+    0% { top: -50px; }
+    99% { top: 0; }
+  }
+  @include animation-intro('intro 0.3s ease-out');
+
+  .gry-content-container {
+    max-width: 960px;
+    position: relative;
+    left: 50%;
+    @include translate(-50%, 0);
+
+    .gry-btn {
+      color: $color-button-header;
+      font-size: $header-button-font-size;
+      line-height: $header-height - ($header-button-font-size - $header-border-height + 1px);
+      padding: 0 5px;
+
+      &:active {
+
+      }
+
+      &.gry-btn-left {
+        margin-left: $header-side-margin-on-fullscreen;
+        float: left;
+      }
+
+      &.gry-btn-right {
+        margin-right: $header-side-margin-on-fullscreen;
+        float: right;
+      }
+    }
+  }
+}

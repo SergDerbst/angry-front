@@ -1,0 +1,36 @@
+//fonts
+$font-size-base: 15px;
+$font-family-base: "Helvetica", Arial, sans-serif;
+$line-height-base: 15px;
+
+//layout
+$grid-max-columns:					8;
+$header-height: 50px;
+$header-border-height: 8px;
+$header-button-font-size: 20px;
+$header-side-margin-on-fullscreen: 15px;
+
+//responsive
+$width-fullscreen-threshold: 480px;
+
+//colors
+$color-text-on-bright-background: #444;
+$color-text-on-dark-background: #6883a6;
+$color-text-on-darkest-background: #eee;
+$color-text-on-primary-background: #fff;
+$color-text-highlighted-on-darkest-background: #ccc;
+$color-text-header-on-bright-background: #303c4d;
+$color-text-header-on-dark-background: #eee;
+
+$background-color-bright: #fff;
+$background-color-dark-lighter: #40464e;
+$background-color-dark: #202833;
+$background-color-darkest: #181e26;
+
+$color-button-disabled: #999;
+$color-button-header: #eee;
+$color-primary: orange;
+
+//ui
+$button-on-bright-background: #888;
+$button-on-bright-background-highlighted: #333;

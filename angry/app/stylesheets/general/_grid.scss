@@ -1,0 +1,46 @@
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+
+.col {
+  display: block;
+  float:left;
+  margin: 1% 0 1% 1.6%;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.group {
+  zoom:1;
+
+  &:after {
+    clear:both;
+  }
+  &:before, &:after {
+    content:"";
+    display:table;
+  }
+}
+
+@mixin grid($col, $numofCols) {
+  width: percentage($col / $numofCols);
+}
+
+@for $i from 1 to ($grid-max-columns + 1) {
+  @for $j from 1 to ($i) {
+    .span-#{$j}-of-#{$i} { @include grid($j, $i)}
+  }
+}
+
+@media only screen and (max-width: $width-fullscreen-threshold) {
+  .col {  margin: 1% 0 1% 0%; }
+  @for $i from 1 to ($grid-max-columns + 1) {
+    @for $j from 1 to ($i) {
+      .span-#{$j}-of-#{$i} { width: 100% }
+    }
+  }
+}

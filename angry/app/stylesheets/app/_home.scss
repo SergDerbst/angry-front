@@ -1,0 +1,109 @@
+.gry-home {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: $background-color-bright;
+  border-top: 1px solid $color-text-header-on-dark-background;
+  height: 100%;
+
+  .gry-home-flag {
+    height: 61.8%;
+
+    .gry-stripe {
+      height: 33.33%;
+      min-height: 100px;
+
+      &.gry-black { background-color: black; }
+      &.gry-red { background-color: red; }
+      &.gry-gold { background-color: gold; }
+
+      &.gry-hiding {
+        @include transition(all 0.7s ease-out);
+        height: 0;
+        min-height: 0;
+      }
+    }
+
+    &.gry-hiding {
+      @include transition(all 0.7s ease-out);
+      height: 0;
+      min-height: 0;
+    }
+  }
+
+  .gry-home-nav {
+    height: 8%;
+    display: inline-block;
+    font-family: $font-family-base;
+    opacity: 1;
+
+    > button {
+      margin-top: 38px;
+      color: $button-on-bright-background;
+      font-weight: bold;
+      border: 2px solid $button-on-bright-background;
+      border-radius: 3px;
+      padding: 5px 12px;
+
+      &:hover {
+        color: $button-on-bright-background-highlighted;
+        border: 2px solid $button-on-bright-background-highlighted;
+      }
+    }
+
+    &.gry-hiding {
+      @include transition(all 0.7s ease-out);
+      opacity: 0;
+    }
+
+    &.gry-hiding-fast {
+      @include transition(all 0.4s ease-out);
+      opacity: 0;
+    }
+  }
+
+  .gry-home-welcome {
+    height: 23.61%;
+    width: 61.8%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 1.2em;
+    color: #000;
+    overflow: hidden;
+    opacity: 0;
+
+    &.gry-hiding {
+      @include transition(all 0.5s ease-out);
+      height: 0;
+      opacity: 0;
+    }
+
+    &.gry-showing {
+      @include transition(all 1.5s ease-out 0.25s);
+      opacity: 1;
+    }
+  }
+
+  .gry-hiding-container {
+    opacity: 0;
+
+    &.gry-showing {
+      @include transition(all 0.25s ease-out 0.85s);
+      opacity: 1;
+
+    }
+
+    &.gry-hiding-fast {
+      @include transition(all 0.4s ease-out);
+      opacity: 0;
+
+    }
+
+    .gry-home-about {
+      display: inline-block;
+      width: 61.8%;
+      text-align: left;
+    }
+  }
+}

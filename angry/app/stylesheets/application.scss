@@ -1,0 +1,20 @@
+@import "general/variables";
+@import "general/mixins";
+@import "general/reset";
+@import "general/grid";
+@import "ui/buttons";
+@import "layout/header";
+@import "layout/content";
+@import "app/home";
+@import "app/articles";
+
+body {
+  text-align: center;
+}
+
+.gry-main-view {
+  width: 100%;
+  height: 100%;
+  max-width: 960px;
+  display: inline-block;
+}
