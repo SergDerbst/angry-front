@@ -1,0 +1,22 @@
+.gry-articles {
+  opacity: 1;
+
+  @include keyframes('intro') {
+    0% { opacity: 0; }
+    50% { opacity: 0; }
+    99% { opacity: 1; }
+  }
+  @include animation-intro('intro 0.6s ease-out');
+
+  .gry-article-list {
+    width: 61.8%;
+    height: 100%;
+    float: left;
+  }
+
+  .gry-toolbox {
+    width: 38.2%;
+    height: 100%;
+    float: right;
+  }
+}
