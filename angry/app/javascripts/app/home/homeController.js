@@ -17,7 +17,12 @@ angular.module('angry').controller('HomeController', [
                     $scope.about = true;
                 },
                 faq: function() { console.log('ask me, bitch!');}
+            },
+            background = function() {
+                angular.element(document.getElementsByTagName('body')[0].querySelector('div.gry-background')).removeClass('gry-grey');
             };
+
+        background();
         $scope.toolTips = {
             articles: 'Read and explore',
             signin: 'Sign in or sign up',
@@ -25,7 +30,6 @@ angular.module('angry').controller('HomeController', [
             faq: 'Frequently asked questions'
         };
 
-        console.log($resource('http://localhost:8080/home'));
         $resource('http://localhost:8080/home').get().$promise.then(
             function success(data) {
                 $scope.data = data;

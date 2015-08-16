@@ -44,4 +44,12 @@
       }
     }
   }
+
+  .gry-header-bottom {
+    width: 100%;
+    height: $header-sub-border-height;
+    background-color: #a5001f;
+    position: relative;
+    top: $header-height - $header-border-height;
+  }
 }
