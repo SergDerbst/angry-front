@@ -8,15 +8,9 @@
   }
   @include animation-intro('intro 0.6s ease-out');
 
-  .gry-article-list {
-    width: 61.8%;
+  .gry-article-pane {
+    width: 66.66%;
     height: 100%;
     float: left;
-  }
-
-  .gry-toolbox {
-    width: 38.2%;
-    height: 100%;
-    float: right;
   }
 }

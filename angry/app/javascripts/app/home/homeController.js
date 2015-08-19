@@ -17,12 +17,7 @@ angular.module('angry').controller('HomeController', [
                     $scope.about = true;
                 },
                 faq: function() { console.log('ask me, bitch!');}
-            },
-            background = function() {
-                angular.element(document.getElementsByTagName('body')[0].querySelector('div.gry-background')).removeClass('gry-grey');
             };
-
-        background();
         $scope.toolTips = {
             articles: 'Read and explore',
             signin: 'Sign in or sign up',

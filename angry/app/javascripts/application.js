@@ -40,6 +40,24 @@
                         }
                     }
                 })
+                .state('go.write', {
+                    url: '/write',
+                    abstract: true,
+                    views: {
+                        'content': {
+                            templateUrl: 'templates/app/write/write.html'
+                        }
+                    }
+                })
+                .state('go.write.article', {
+                    url: '/article',
+                    views: {
+                        'write': {
+                            templateUrl: 'templates/app/write/article.html',
+                            controller: 'WriteArticleController'
+                        }
+                    }
+                })
                 .state('modal', {
                     abstract: true,
                     views: {

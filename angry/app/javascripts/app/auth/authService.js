@@ -23,8 +23,6 @@ angular.module('angry').factory('authService', [
                         return null;
                     },
                     responseError: function (err) {
-                        console.log('err - access_token_expired?');
-                        console.log(err);
                         return $q.reject(err);
                     }
                 }

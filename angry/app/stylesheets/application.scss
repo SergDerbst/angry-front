@@ -5,23 +5,13 @@
 @import "ui/buttons";
 @import "layout/header";
 @import "layout/content";
+@import "app/components/toolbox";
 @import "app/home";
 @import "app/articles";
+@import "app/write";
 
 body {
   text-align: center;
-
-  .gry-background {
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-
-    &.gry-grey {
-      background-color: #ddd;
-
-      @include transition(all 0.6s ease-out);
-    }
-  }
 }
 
 .gry-main-view {

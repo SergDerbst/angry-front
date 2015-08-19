@@ -1,0 +1,22 @@
+.gry-toolbox {
+  width: 33.33%;
+  height: 100%;
+  float: right;
+}
+
+.gry-buttons {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+
+  .gry-btn {
+    background-color: $calm-blue;
+    color: #eee;
+    font-size: 20px;
+    line-height: 20px;
+
+    &.fa-pencil-square-o {
+      padding: 10px 8px 10px 12px;
+    }
+  }
+}
