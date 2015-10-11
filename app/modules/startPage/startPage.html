@@ -1,0 +1,26 @@
+<div class="gry-home">
+    <div ng-class="{'gry-home-flag': !startPage.data._about, 'gry-home-flag gry-hiding': startPage.data._about || startPage.data._articles}">
+        <div ng-class="{'gry-stripe gry-black': !startPage.data._about && !startPage.data._articles, 'gry-stripe gry-black gry-hiding': startPage.data._about || startPage.data._articles}"></div>
+        <div ng-class="{'gry-stripe gry-red': !startPage.data._about, 'gry-stripe gry-black gry-hiding': startPage.data._about || startPage.data._articles}"></div>
+        <div ng-class="{'gry-stripe gry-gold': !startPage.data._about, 'gry-stripe gry-black gry-hiding': startPage.data._about || startPage.data._articles}"></div>
+    </div>
+    <h1 ng-class="{ 'gry-home-title': !startPage.data._articles, 'gry-home-title gry-hiding': startPage.data._articles }">The Angry Sovereign</h1>
+    <div ng-class="{'gry-home-welcome': !startPage.data._about && !startPage.data && !startPage.data._articles, 'gry-home-welcome gry-showing': !startPage.data._about && startPage.data && !startPage.data._articles, 'gry-home-welcome gry-hiding': startPage.data._about || startPage.data._articles}">
+        <div>
+            <span>{{ startPage.data.welcome }}</span>
+        </div>
+    </div>
+    <div ng-class="{'gry-home-nav': !startPage.data._articles, 'gry-home-nav gry-hiding': startPage.data._articles && !startPage.data._about, 'gry-home-nav gry-hiding-fast': startPage.data._articles && !startPage.data._about}">
+        <button class="gry-btn" title="{{toolTips.articles}}" ng-click="startPage.goToArticles()">Articles</button>
+        <button class="gry-btn" title="{{toolTips.signin}}" ng-click="startPage.goToSignin()">Sign In</button>
+        <button class="gry-btn" title="{{toolTips.startPage.data._about}}" ng-click="startPage.goToAbout()" ng-if="!startPage.data._about">About</button>
+        <button class="gry-btn" title="{{toolTips.faq}}" ng-click="startPage.goToFaq()" ng-if="startPage.data._about">Faq</button>
+    </div>
+    <div ng-class="{ 'gry-hiding-container': !startPage.data._about && !startPage.data._articles, 'gry-hiding-container gry-showing': startPage.data._about && !startPage.data._articles, 'gry-hiding-container gry-hiding-fast': startPage.data._articles }"
+         ng-show="startPage.data._about">
+        <div class="gry-home-about">
+            <span>{{ startPage.data.about }}</span>
+        </div>
+    </div>
+    <div class="fa fa-search" style="display: none"></div>
+</div>

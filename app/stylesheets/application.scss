@@ -1,0 +1,70 @@
+@import "general/variables";
+@import "general/mixins";
+@import "general/fonts";
+@import "general/reset";
+@import "general/grid";
+@import "ui/buttons";
+@import "layout/header";
+@import "layout/content";
+@import "app/components/toolbox";
+@import "app/home";
+@import "app/articles";
+@import "app/write";
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $color-text-basic;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: $font-size-base + 6px;
+}
+
+h2 {
+  font-size: $font-size-base + 4px;
+}
+
+h3 {
+  font-size: $font-size-base + 2px;
+}
+
+h4 {
+  font-size: $font-size-base + 1px;
+}
+
+h5 {
+  font-size: $font-size-base;
+}
+
+h6 {
+  font-size: $font-size-base - 1px;
+}
+
+p,
+span,
+div {
+  font-size: $font-size-base;
+}
+
+.gry-main-view {
+  width: 100%;
+  height: 100%;
+  max-width: 960px;
+  display: inline-block;
+}

@@ -1,0 +1,25 @@
+<div id="login" class="gry-modal-dialog gry-login">
+	<div class="gry-modal-dialog-head">
+		<img class="gry-login-logo" src="assets/images/dragon_logo.png"/>
+	</div>
+	<div class="gry-modal-dialog-content">
+		<form name="loginForm" accept-charset="UTF-8" novalidate data-ng-submit="login.submit(loginForm.$valid)">
+			<input id="username" name="username" type="text" placeholder="{{'Username/Email'}}" required
+				   data-ng-model="login.usernameOrEmail"
+				   data-ng-trim="true"
+				   data-ng-change="update()"/>
+			<input id="password" name="password" type="password" placeholder="{{'Password'}}" required
+				   data-ng-model="login.password"
+				   data-ng-change="update()"/>
+			<button class="gry-btn gry-btn-primary" type="submit"
+					data-ng-disabled="loginForm.$invalid">
+				Log In
+			</button>
+			<p class="gry-error-message">{{login.hint}}</p>
+		</form>
+	</div>
+	<div class="gry-modal-dialog-footer">
+		<a class="gry-footer-link" data-ui-sref="signup" data-translate="Sign up"></a><br/>
+		<a class="gry-footer-link" data-ui-sref="forgotPassword" data-translate="Forgot password?"></a>
+	</div>
+</div>

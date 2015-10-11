@@ -1,0 +1,22 @@
+{
+  "name": "vt-app",
+  "version": "0.0.1",
+  "description": "Angry Sovereign HTML5 frontend application",
+  "private": true,
+  "authors": [
+    "Sergio Weigel <sergio.weigel@gmail.com>"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-resource": "~1.4.7",
+    "angular-ui-router": "~0.2.15",
+    "a0-angular-storage": "~0.0.12",
+    "angular-mocks": "~1.4.7",
+    "angular-animate": "~1.4.7",
+    "angular-translate": "~2.8.1",
+    "angular-translate-loader-static-files": "~2.8.1",
+    "angular-sanitize": "~1.4.7",
+    "moment": "~2.10.6",
+    "font-awesome": "~4.4.0"
+  }
+}
