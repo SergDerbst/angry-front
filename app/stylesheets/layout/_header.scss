@@ -23,15 +23,21 @@
     left: 50%;
     @include translate(-50%, 0);
 
+    .gry-logo {
+      color: $color-button-header;
+      margin-left: $header-side-margin-on-fullscreen;
+      float: left;
+      margin-top: 16px;
+      font-family: 'Reclaim';
+      font-size: 30px;
+    }
+
     .gry-btn {
       color: $color-button-header;
       font-size: $header-button-font-size;
       line-height: $header-height - ($header-button-font-size - $header-border-height + 1px);
       padding: 0 5px;
-
-      &:active {
-
-      }
+      margin-top: 2px;
 
       &.gry-btn-left {
         margin-left: $header-side-margin-on-fullscreen;

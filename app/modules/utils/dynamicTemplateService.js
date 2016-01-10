@@ -11,13 +11,22 @@
 
 		return service;
 
+		function loadAndCompile(templateUrl, scopeData) {
+			var deferred = $q.defer();
+
+			_fetchTemplate(templateUrl, scopeData).then(function(template) {
+				deferred.resolve(template);
+			});
+
+			return deferred.promise;
+		}
+
 		function _createScope(scopeData) {
 			var scope = $rootScope.$new();
 
 			for (var s in scopeData) {
 				scope[s] = scopeData[s];
 			}
-
 			return scope;
 		}
 
@@ -26,16 +35,6 @@
 
 			$http.get(templateUrl, {cache: $templateCache}).then(function(response) {
 				deferred.resolve($compile(angular.element(response.data))(_createScope(scopeData)));
-			});
-
-			return deferred.promise;
-		}
-
-		function loadAndCompile(templateUrl, scopeData) {
-			var deferred = $q.defer();
-
-			_fetchTemplate(templateUrl, scopeData).then(function(template) {
-				deferred.resolve(template);
 			});
 
 			return deferred.promise;

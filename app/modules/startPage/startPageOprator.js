@@ -29,7 +29,6 @@
         }
 
         function goToArticles() {
-            console.log('pupenwurst');
             _startPage._articles = true;
             setTimeout(function () {
                 $state.go('gry.articles');

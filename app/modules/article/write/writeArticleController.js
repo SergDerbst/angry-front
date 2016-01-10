@@ -4,28 +4,21 @@
     angular.module('app.article').controller('WriteArticleController', WriteArticleController);
 
     /* @ngInject */
-    function WriteArticleController(writeArticleSettings, writeArticleService) {
+    function WriteArticleController(writeArticleSettings, writeArticleOperator) {
         var vm = this;
 
+        vm.article = writeArticleOperator.article;
         vm.itemCategories = writeArticleSettings.itemCategories;
-        vm.currentCategory = writeArticleService.currentCategory;
-        vm.currentText = writeArticleService.currentText;
-        vm.hints = writeArticleService.hints;
-        vm.hint = writeArticleService.hint;
+        vm.current = writeArticleOperator.current;
+        vm.hints = writeArticleOperator.hints;
+        vm.hint = writeArticleOperator.hint;
+        vm.keyCommandHandler = writeArticleOperator.keyCommandHandler;
 
-        vm.setCategory = setCategory;
+        vm.setCategory = writeArticleOperator.setCategory;
+        vm.categoryDisabled = writeArticleOperator.categoryDisabled;
 
-        _init();
+        vm.render = writeArticleOperator.render;
 
-        function _init() {
-            var hintEl = angular.element(document.getElementsByTagName('body')[0].querySelector('div#article-hint'));
-            setTimeout(function() {
-                hintEl.addClass('gry-showing');
-            }, 1000);
-        }
-
-        function setCategory(category) {
-            vm.currentCategory = category;
-        }
+        writeArticleOperator.init();
     }
 })();

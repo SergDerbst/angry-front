@@ -1,0 +1,52 @@
+.gry-article-pane {
+
+  .gry-article {
+
+    .gry-article-item {
+      text-align: left;
+      padding: 10px;
+    }
+
+    .gry-article-title {
+      > h1 {
+        line-height: 40px;
+        font-size: 40px;
+        color: $calm-blue;
+      }
+    }
+
+    .gry-article-subtitle {
+      > h2 {
+        line-height: 25px;
+        font-size: 25px;
+        color: darken($calm-blue, 10%);
+      }
+    }
+
+    .gry-article-abstract {
+      > span {
+        font-weight: 700;
+        color: #333;
+      }
+    }
+
+    .gry-article-header {
+      > h3 {
+        color: #555;
+      }
+    }
+
+    .gry-article-paragraph {
+      > p {
+        > a {
+          text-decoration: none;
+          color: $bloody-red;
+        }
+      }
+    }
+  }
+
+  .gry-current {
+    //background-color: $calm-yellow;
+  }
+}

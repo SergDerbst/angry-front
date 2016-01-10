@@ -1,22 +1,67 @@
-<div id="article" class="gry-article"></div>
-<div class="gry-write-control">
-    <div class="gry-header gry-hiding-container">
-        <div id="article-hint" class="gry-hint">{{hint}}</div>
-    </div>
-    <div class="gry-content">
-        <div class="gry-button-bar">
-            <button title="{{value.name}}"
-                    data-ng-class="{'vt-btn vt-active': currentCategory == key, 'vt-btn': currentCategory != key}"
-                    data-ng-repeat="(key, value) in article.itemCategories"
-                    data-ng-click="category(key)">{{value.name}}</button>
+<div gry-key-commands handler="writeArticle.keyCommandHandler">
+    <div id="gry-article" class="gry-article"></div>
+    <div class="gry-write-control">
+        <div class="gry-header gry-hiding-container">
+            <div id="article-hint" class="gry-hint">{{ writeArticle.hint }}</div>
         </div>
-        <div class="gry-type-area">
-            <textarea autofocus
-                      data-gry-typebox
-                      data-ng-model="currentText"></textarea>
-        </div>
-        <div class="gry-nav-area">
-
+        <div class="gry-content">
+            <div class="gry-button-bar">
+                <button title="{{ value.name }}"
+                        ng-repeat="(key, value) in writeArticle.itemCategories"
+                        ng-if="key !== 'text'"
+                        ng-class="{'gry-btn gry-active': writeArticle.current.category === key, 'gry-btn': writeArticle.current.category !== key}"
+                        ng-click="writeArticle.setCategory(key)"
+                        ng-disabled="writeArticle.categoryDisabled(key)">{{value.name}}</button>
+            </div>
+            <div class="gry-type-area"
+                 ng-if="writeArticle.current.category === 'title' || writeArticle.current.category === 'subtitle' || writeArticle.current.category === 'abstract'">
+                <div>
+                    <textarea autofocus
+                              class="gry-category-text"
+                              ng-model="writeArticle.article[writeArticle.current.category]"
+                              ng-change="writeArticle.render()"></textarea>
+                </div>
+            </div>
+            <div class="gry-type-area"
+                 ng-if="writeArticle.current.category === 'header'">
+                <div>
+                    <textarea autofocus
+                              class="gry-category-text"
+                              ng-model="writeArticle.article.items[writeArticle.current.item].data.text"
+                              ng-change="writeArticle.render()"></textarea>
+                </div>
+             </div>
+            <div class="gry-type-area"
+                 ng-if="writeArticle.current.category === 'paragraph'">
+                <div>
+                    <textarea autofocus
+                              class="gry-category-text"
+                              ng-model="writeArticle.article.items[writeArticle.current.item].data[writeArticle.current.data].data.text"
+                              ng-change="writeArticle.render()"></textarea>
+                 </div>
+            </div>
+            <div class="gry-type-area"
+                 ng-if="writeArticle.current.category === 'sidenote'">
+                <div>
+                    <label class="gry-category-sidenote">Title:</label>
+                    <input type="text"
+                           class="gry-category-sidenote"
+                           ng-model="writeArticle.article.items[writeArticle.current.item].data[writeArticle.current.data].data.title"
+                           ng-change="writeArticle.render()"/>
+                    <label class="gry-category-sidenote">Target Url:</label>
+                    <input type="text"
+                           class="gry-category-sidenote"
+                           ng-model="writeArticle.article.items[writeArticle.current.item].data[writeArticle.current.data].data.url"
+                           ng-change="writeArticle.render()"/>
+                    <label class="gry-category-sidenote">Text:</label>
+                    <textarea autofocus
+                              class="gry-category-sidenote"
+                              ng-model="writeArticle.article.items[writeArticle.current.item].data[writeArticle.current.data].data.text"
+                              ng-change="writeArticle.render()"></textarea>
+                </div>
+             </div>
+            <div class="gry-nav-area">
+            </div>
         </div>
     </div>
 </div>

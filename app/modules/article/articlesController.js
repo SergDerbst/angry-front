@@ -4,7 +4,9 @@
     angular.module('app.article').controller('ArticlesController', ArticlesController);
 
     /* @ngInject */
-    function ArticlesController() {
+    function ArticlesController(articlesOperator) {
+        var vm = this;
 
+        vm.writeArticle = articlesOperator.writeArticle
     }
 })();

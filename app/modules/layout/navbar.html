@@ -1,9 +1,10 @@
 <div class="gry-header">
     <div class="gry-content-container">
         <button class="gry-btn gry-btn-left fa fa-bars" data-ng-click="header('nav')"></button>
-        <button class="gry-btn gry-btn-right fa fa-power-off" data-ng-click="header('logout')"></button>
-        <button class="gry-btn gry-btn-right fa fa-bell" data-ng-click="header('notifications')"></button>
-        <button class="gry-btn gry-btn-right fa fa-search" data-ng-click="header('search')"></button>
+        <span class="gry-logo">RECLAIM GERMANY</span>
+        <button class="gry-btn gry-btn-right fa fa-power-off" ng-click="navbar.logout()"></button>
+        <button class="gry-btn gry-btn-right fa fa-bell" ng-click="navbar.openNotifications()"></button>
+        <button class="gry-btn gry-btn-right fa fa-search" ng-click="navbar.openSearch"></button>
     </div>
     <div class="gry-header-bottom"></div>
 </div>

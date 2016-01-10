@@ -1,6 +1,6 @@
 .gry-toolbox {
   width: 33.33%;
-  height: 100%;
+  height: 200px;
   float: right;
 }
 
@@ -10,13 +10,13 @@
   flex-direction: row;
 
   .gry-btn {
-    background-color: $calm-blue;
-    color: #eee;
+    background-color: white; //$calm-blue;
+    color: $calm-blue; //#eee;
     font-size: 20px;
     line-height: 20px;
 
     &.fa-pencil-square-o {
-      padding: 10px 8px 10px 12px;
+      padding: 4px 3px 3px 5px;
     }
   }
 }

@@ -1,0 +1,20 @@
+.gry-sidenote {
+  position: relative;
+  width: 33.33%;
+  min-height: 550px;
+  float: right;
+  padding: 10px;
+  background-color: $calm-yellow;
+  border: 1px solid $calm-blue;
+  border-radius: 2px;
+
+  .gry-sidenote-title {
+    color: $calm-blue;
+    text-align: left;
+  }
+
+  .gry-sidenote-text {
+    margin-top: 10px;
+    text-align: left;
+  }
+}

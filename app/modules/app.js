@@ -11,6 +11,8 @@
         'app.article'
     ]);
 
+    app.value('bodyElement', angular.element(document.getElementsByTagName('body')[0]));
+
     app.run(run);
 
     /* @ngInject */

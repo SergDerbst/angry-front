@@ -17,6 +17,7 @@
 
 		function openModal(templateUrl, scopeData) {
 			deferred = $q.defer();
+			scopeData.closeModal = closeModal;
 			dynamicTemplateService.loadAndCompile(templateUrl, scopeData).then(function(template) {
 				var modalRootEl = angular.element(document.createElement('div')).addClass('gry-modal');
 				modalRootEl.append(template);

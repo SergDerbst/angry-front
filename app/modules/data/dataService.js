@@ -6,6 +6,13 @@
     /* @ngInject */
     function dataService() {
         var _data = {
+            articles: {
+                read: {},
+                write: {}
+            },
+            layout: {
+                navbar: {}
+            },
             startPage: {
                 _about: false,
                 _articles: false

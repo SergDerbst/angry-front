@@ -7,16 +7,17 @@
     function writeArticleSettings() {
         var settings = {
             itemCategories: {
-                title: { name: 'Title'},
-                subtitle: { name: 'Subtitle'},
-                abstract: { name: 'Abstract'},
-                header: { name: 'Header'},
-                paragraph: { name: 'Paragraph'},
-                sidenote: { name: 'Side Note'},
-                footnote: { name: 'Foot Note'},
-                image: { name: 'Image'},
-                video: { name: 'Video'},
-                audio: { name: 'Audio'}
+                title: { name: 'Title', key: 'title' },
+                subtitle: { name: 'Subtitle', key: 'subtitle' },
+                abstract: { name: 'Abstract', key: 'abstract' },
+                header: { name: 'Header', key: 'header' },
+                paragraph: { name: 'Paragraph', key: 'paragraph' },
+                text: { name: 'Text', key: 'text' },
+                sidenote: { name: 'Side Note', key: 'sidenote' },
+                footnote: { name: 'Foot Note', key: 'footnote' },
+                image: { name: 'Image', key: 'image' },
+                video: { name: 'Video', key: 'video' },
+                audio: { name: 'Audio', key: 'audio' }
             }
         };
 
