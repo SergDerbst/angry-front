@@ -4,7 +4,7 @@
     angular.module('app.article').factory('writeArticleOperator', writeArticleOperator);
 
     /* @ngInject */
-    function writeArticleOperator(keyCommandHandler, writeArticleService, writeArticleCategoryService, renderArticleService) {
+    function writeArticleOperator(keyCommandHandler, writeArticleService, writeArticleCategoryService, articleRenderingService) {
         var _article = writeArticleService.article;
 
         var service = {
@@ -25,7 +25,7 @@
         }
 
         function render() {
-            renderArticleService.render(_article, 'write');
+            articleRenderingService.render(_article, 'write');
         }
     }
 })();

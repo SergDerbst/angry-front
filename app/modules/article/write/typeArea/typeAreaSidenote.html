@@ -1,0 +1,17 @@
+<div class="gry-type-area">
+    <label>Title:</label>
+    <input type="text"
+           class="gry-category-one-liner"
+           ng-model="writeArticle.article.items[writeArticle.current.item].data[writeArticle.current.data].data.title"
+           ng-change="writeArticle.render()"/>
+    <label>Target Url:</label>
+    <input type="text"
+           class="gry-category-one-liner"
+           ng-model="writeArticle.article.items[writeArticle.current.item].data[writeArticle.current.data].data.url"
+           ng-change="writeArticle.render()"/>
+    <label>Text:</label>
+    <textarea autofocus
+              class="gry-category-one-liner"
+              ng-model="writeArticle.article.items[writeArticle.current.item].data[writeArticle.current.data].data.text"
+              ng-change="writeArticle.render()"></textarea>
+</div>

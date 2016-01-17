@@ -14,7 +14,7 @@
                 paragraph: { name: 'Paragraph', key: 'paragraph' },
                 text: { name: 'Text', key: 'text' },
                 sidenote: { name: 'Side Note', key: 'sidenote' },
-                footnote: { name: 'Foot Note', key: 'footnote' },
+                source: { name: 'Source', key: 'source' },
                 image: { name: 'Image', key: 'image' },
                 video: { name: 'Video', key: 'video' },
                 audio: { name: 'Audio', key: 'audio' }

@@ -35,7 +35,7 @@
                     _writeArticleOperator.setCategory(writeArticleSettings.itemCategories.abstract.key);
                     break;
                 case keyCodes.letter.f:
-                    _writeArticleOperator.setCategory(writeArticleSettings.itemCategories.footnote.key);
+                    _writeArticleOperator.setCategory(writeArticleSettings.itemCategories.source.key);
                     break;
                 case keyCodes.letter.h:
                     _writeArticleOperator.setCategory(writeArticleSettings.itemCategories.header.key);

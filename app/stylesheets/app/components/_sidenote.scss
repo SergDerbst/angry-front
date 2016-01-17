@@ -4,9 +4,19 @@
   min-height: 550px;
   float: right;
   padding: 10px;
-  background-color: $calm-yellow;
-  border: 1px solid $calm-blue;
+  background-color: lighten($calm-blue, 50%);
   border-radius: 2px;
+  opacity: 0;
+
+  &.gry-hiding {
+    @include transition(all 0.5s ease-out);
+    opacity: 0;
+  }
+
+  &.gry-showing {
+    @include transition(all 1s ease-out);
+    opacity: 1;
+  }
 
   .gry-sidenote-title {
     color: $calm-blue;

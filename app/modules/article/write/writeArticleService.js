@@ -9,6 +9,10 @@
         var _article = {
             id: null,
             published: false,
+            sources: {
+                types: ['book', 'print', 'article', 'link'],
+                _currentType: '0'
+            },
             items: [
                 {
                     category: 'paragraph',

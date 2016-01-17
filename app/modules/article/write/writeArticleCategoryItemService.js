@@ -31,17 +31,11 @@
                 case writeArticleSettings.itemCategories.sidenote.key:
                     _addSideNote(item);
                     break;
-                case writeArticleSettings.itemCategories.footnote.key:
-                    _addFootNote(item);
+                case writeArticleSettings.itemCategories.source.key:
+                    _addSource(item);
                     break;
                 case writeArticleSettings.itemCategories.image.key:
                     _addImage(item);
-                    break;
-                case writeArticleSettings.itemCategories.video.key:
-                    _addVideo(item);
-                    break;
-                case writeArticleSettings.itemCategories.audio.key:
-                    _addAudio(item);
                     break;
             }
         }
@@ -64,23 +58,57 @@
             _addItemToContainer(item);
         }
 
-        function _addFootNote(item) {
-            item.category = writeArticleSettings.itemCategories.footnote.key;
+        function _addSource(item) {
+            var source = {
+                    author: '',
+                    magazine: '',
+                    page: '',
+                    place: '',
+                    publisher: '',
+                    title: '',
+                    year: '',
+                    url: '',
+                    article: ''
+                },
+                index = _findSourceIndex();
+
+            _article.sources[index] = source;
+            item.category = writeArticleSettings.itemCategories.source.key;
+            item.data.index = index;
+            console.log(item);
             _addItemToContainer(item);
+        }
+
+        function _findSourceIndex() {
+            var counter = 0;
+
+            for (var i = 0, len1 = _article.items.length; i < len1; i++) {
+                if (_isContainerItemElement(i)) {
+                    for (var j = 0, len2 = _article.items[i].data.length; j < len2; j++) {
+                        if (_isSideNoteElement(i, j)) {
+                            counter++;
+
+                            if (_article.current.data === i) {
+                                return counter;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return counter;
+        }
+
+        function _isSideNoteElement(i, j) {
+            return _article.items[i].data[j].category === writeArticleSettings.itemCategories.source.key;
+        }
+
+        function _isContainerItemElement(i) {
+            return _article.items[i].category === writeArticleSettings.itemCategories.paragraph.key;
         }
 
         function _addImage(item) {
             item.category = writeArticleSettings.itemCategories.image.key;
-            _addItemToContainer(item);
-        }
-
-        function _addVideo(item) {
-            item.category = writeArticleSettings.itemCategories.video.key;
-            _addItemToContainer(item);
-        }
-
-        function _addAudio(item) {
-            item.category = writeArticleSettings.itemCategories.audio.key;
             _addItemToContainer(item);
         }
 

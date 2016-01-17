@@ -4,8 +4,14 @@
   width: 100%;
   height: 38.2%;
   max-width: 960px;
-  background-color: $background-color-neutral;
+  background-color: lighten($calm-blue, 50%);
   border-radius: 3px 3px 0 0;
+
+  .gry-footnote {
+    position: relative;
+    bottom: 30px;
+    background-color: lighten($calm-blue, 50%);
+  }
 
   .gry-header {
     border-radius: 2px 2px 0 0;
@@ -84,44 +90,70 @@
     .gry-type-area {
       width: 50%;
       float: left;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      padding: 10px;
 
-      > div {
-        > textarea.gry-category-text {
-          width: 98%;
-          min-height: 400px;
-          margin-left: 5px;
-          margin-top: 5px;
-          font-family: $font-family-base;
-          font-size: 0.9em;
-          outline: none;
-          border-radius: 2px;
-          padding: 5px;
-        }
+      > textarea.gry-category-text {
+        width: 98%;
+        min-height: 400px;
+        margin-left: 5px;
+        margin-top: 5px;
+        color: $color-button-header;
+        background-color: $background-color-dark;
+        font-family: $font-family-base;
+        font-size: 0.9em;
+        outline: none;
+        border-radius: 2px;
+        padding: 5px;
       }
 
-      > div {
-        display: flex;
+      > div.gry-type-sub-area {
         flex-direction: column;
         text-align: left;
-        padding: 10px;
+        margin-top: 5px;
 
-        > label.gry-category-sidenote {
+        > label {
           color: $color-text-basic;
           margin: 5px 0;
           font-weight: 700;
         }
 
-        > input.gry-category-sidenote {
+        > input.gry-category-one-liner {
+          width: 100%;
+          margin: 5px 0;
+          color: $color-button-header;
+          background-color: $background-color-dark;
           border-radius: 2px;
           padding: 5px;
           outline: none;
         }
+      }
 
-        > textarea.gry-category-sidenote {
-          min-height: 300px;
-          outline: none;
-          padding: 5px;
-        }
+      > label {
+        color: $color-text-basic;
+        margin: 5px 0;
+        font-weight: 700;
+      }
+
+      > select {
+        height: 20px;
+        background-color: $background-color-dark;
+        color: $color-button-header;
+        outline: none;
+      }
+
+      > input.gry-category-one-liner {
+        border-radius: 2px;
+        padding: 5px;
+        outline: none;
+      }
+
+      > textarea.gry-category-sidenote {
+        min-height: 300px;
+        outline: none;
+        padding: 5px;
       }
     }
 

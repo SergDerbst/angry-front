@@ -1,0 +1,66 @@
+<div class="gry-type-area">
+    <label>Type of Source</label>
+    <select class="gry-category-source"
+            ng-model="writeArticle.article.sources._currentType">
+        <option ng-repeat="type in writeArticle.article.sources.types track by $index" value="{{ $index }}">{{ type }}</option>
+    </select>
+    <div class="gry-type-sub-area" ng-if="writeArticle.article.sources._currentType === '0'">
+        <label>Author</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].author"/>
+        <label>Title</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].title"/>
+        <label>Page</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].page"/>
+        <label>Publisher</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].publisher"/>
+        <label>Year of Release</label>
+        <input type="number" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].year"/>
+        <label>Place of Release</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].place"/>
+        <label>Url</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].url"/>
+    </div>
+    <div class="gry-type-sub-area" ng-if="writeArticle.article.sources._currentType === '1'">
+        <label>Author</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].author"/>
+        <label>Title</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].title"/>
+        <label>Magazine</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].magazine"/>
+        <label>Year of Release</label>
+        <input type="number" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].year"/>
+        <label>Place of Release</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].place"/>
+        <label>Url</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].url"/>
+    </div>
+    <div class="gry-type-sub-area" ng-if="writeArticle.article.sources._currentType === '2'">
+        <label>Author</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].author"/>
+        <label>Title</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].title"/>
+        <label>Url</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].url"/>
+    </div>
+    <div class="gry-type-sub-area" ng-if="writeArticle.article.sources._currentType === '3'">
+        <label>Url</label>
+        <input type="text" class="gry-category-one-liner"
+               ng-model="writeArticle.article.sources[writeArticle.article.sources._current].url"/>
+    </div>
+</div>

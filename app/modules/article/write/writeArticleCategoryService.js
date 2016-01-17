@@ -4,7 +4,7 @@
     angular.module('app.article').factory('writeArticleCategoryService', writeArticleCategoryService);
 
     /* @ngInject */
-    function writeArticleCategoryService(writeArticleService, writeArticleSettings, writeArticleCategoryItemService, renderArticleService, modalService) {
+    function writeArticleCategoryService(writeArticleService, writeArticleSettings, writeArticleCategoryItemService, articleRenderingService, modalService) {
         var _missingCategoryTemplateUrl = 'templates/article/write/categoryMissingModal.html',
             _article = writeArticleService.article,
             _modal = true;
@@ -37,7 +37,7 @@
                     break;
             }
             _article.current = service.current;
-            renderArticleService.render(_article, 'write');
+            articleRenderingService.render(_article, 'write');
         }
 
         function categoryDisabled(category) {
@@ -52,7 +52,7 @@
                 case writeArticleSettings.itemCategories.paragraph.key:
                     return !(_hasTitle() && _hasSubtitle() && _hasAbstract());
                 default:
-                    return !(_hasTitle() && _hasSubtitle() && _hasAbstract() && _currentIsContainerItem());
+                    return !(_hasTitle() && _hasSubtitle() && _hasAbstract() && _currentIsInContainerItem());
             }
         }
 
@@ -106,8 +106,11 @@
             }
         }
 
-        function _currentIsContainerItem() {
-            return service.current.category === writeArticleSettings.itemCategories.paragraph.key;
+        function _currentIsInContainerItem() {
+            return service.current.category === writeArticleSettings.itemCategories.paragraph.key ||
+                service.current.category === writeArticleSettings.itemCategories.sidenote.key ||
+                service.current.category === writeArticleSettings.itemCategories.source.key ||
+                service.current.category === writeArticleSettings.itemCategories.image.key;
         }
     }
 })();
